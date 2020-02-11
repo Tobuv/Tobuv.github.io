@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>article-1 | Tobuv&#39;s blog</title>
+  <title>排序算法 | Tobuv&#39;s blog</title>
   
   
 
@@ -305,8 +305,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/10/article-1/">
-        article-1
+      <a href="/2019/02/11/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+        排序算法
       </a>
     </h1>
   
@@ -321,9 +321,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="https://Tobuv.github.io" rel="nofollow">
+      <a href="https://tobuv.github.io" rel="nofollow">
         
-          <i class="fas fa-user" aria-hidden="true"></i>
+          <img src="assets/person.png">
         
         <p>Tobuv</p>
       </a>
@@ -337,7 +337,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-10</p>
+    <p>2019-02-11</p>
   </a>
 </div>
 
@@ -345,29 +345,41 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>算法</p>
+    </a>
+  </div>
+
 
           
         
           
             
   
-    <div class="new-meta-item browse busuanzi">
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
       <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>494字</p>
       </a>
     </div>
-  
-
-
-          
-        
-          
-            
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>2分</p>
+      </a>
+    </div>
   
 
           
@@ -387,7 +399,8 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="算法学习"><a href="#算法学习" class="headerlink" title="算法学习"></a>算法学习</h1><p>@[toc]</p>
+        <h1 id="算法学习"><a href="#算法学习" class="headerlink" title="算法学习"></a>算法学习</h1><a id="more"></a>
+<p>@[toc]</p>
 <h2 id="排序综合"><a href="#排序综合" class="headerlink" title="排序综合"></a>排序综合</h2><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*插入排序*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> tem = arr[i];</span><br><span class="line">		<span class="keyword">for</span> (j = i; j &gt; <span class="number">0</span> &amp;&amp; arr[j - <span class="number">1</span>] &gt; tem; j--)</span><br><span class="line">			arr[j] = arr[j - <span class="number">1</span>];</span><br><span class="line">		arr[j] = tem;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="希尔排序（插入排序改进）"><a href="#希尔排序（插入排序改进）" class="headerlink" title="希尔排序（插入排序改进）"></a>希尔排序（插入排序改进）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*希尔排序（插入排序升级）*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j, k;</span><br><span class="line">	<span class="keyword">for</span> (k = length / <span class="number">2</span>; k &gt; <span class="number">0</span>; k /= <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (i = k; i &lt; length; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> tem = arr[i];</span><br><span class="line">			<span class="keyword">for</span> (j = i; j &gt; <span class="number">0</span> &amp;&amp; arr[j - k] &gt; tem; j -= k)</span><br><span class="line">				arr[j] = arr[j - k];</span><br><span class="line">			arr[j] = tem;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*冒泡排序*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; length - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; length - <span class="number">1</span> - i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) </span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> tem = arr[j + <span class="number">1</span>];</span><br><span class="line">				arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">				arr[j] = tem;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -396,7 +409,7 @@
       </div>
       
         <br>
-        <center>打赏图片：<br><fancybox>(assets/money_wx.png)</fancybox></center>
+        <center>打赏图片：<br><img src="assets/money_wx.png"></center>
       
       
         <br>
@@ -407,10 +420,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-10T21:28:23+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-11T14:40:03+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年2月10日</p>
+    <p>更新于 2020年2月11日</p>
   </a>
 </div>
 
@@ -418,6 +431,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/c-c/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>c/c++</p></a></div>
+
 
         
       
@@ -429,7 +445,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://tobuv.github.io/2020/02/10/article-1/&title=article-1 | Tobuv's blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://tobuv.github.io/2019/02/11/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/&title=排序算法 | Tobuv's blog&summary=算法学习"
           
           >
           
@@ -441,7 +457,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tobuv.github.io/2020/02/10/article-1/&title=article-1 | Tobuv's blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tobuv.github.io/2019/02/11/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/&title=排序算法 | Tobuv's blog&summary=算法学习"
           
           >
           
@@ -453,7 +469,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://tobuv.github.io/2020/02/10/article-1/&title=article-1 | Tobuv's blog&summary="
+          href="http://service.weibo.com/share/share.php?url=https://tobuv.github.io/2019/02/11/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/&title=排序算法 | Tobuv's blog&summary=算法学习"
           
           >
           
@@ -474,25 +490,6 @@
 
 
       
-      
-          <div class="prev-next">
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2020/02/10/hello-world/" rel="prev" title="Hello World">
-                                  
-                                      Hello World
-                                  
-                              </a>
-                          </h4>
-                          
-                      </span>
-                  </section>
-              
-          </div>
       
     </section>
   </article>
@@ -528,7 +525,7 @@
 
   <script>
     window.subData = {
-      title: 'article-1',
+      title: '排序算法',
       tools: true
     }
   </script>
@@ -830,6 +827,31 @@
           
             
               
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%AE%97%E6%B3%95/" href="/blog/categories/%E7%AE%97%E6%B3%95/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
 
             
           
@@ -861,6 +883,27 @@
           
             
               
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/c-c/" style="font-size: 14px; color: #999">c/c++</a>
+    </div>
+  </section>
+
 
             
           
@@ -921,7 +964,7 @@
 </aside>
 
 <footer id="footer" class="clearfix">
-  
+ 
   
     <div class="social-wrapper">
       
@@ -959,23 +1002,37 @@
       
     </div>
   
-  <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
+  <br> 
+  
+    <div class="footer">
+      <p><a href="https://tobuv.github.io">Copyright © 2019-2020 Tobuv</a></p>
+
+    </div>
+  
   <div>
-    本站使用
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    作为主题
-    
-      ，
-      总访问量为
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
-    
-    。
+      
+
   </div>
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
 </footer>
 <script>setLoadingBarProgress(80);</script>
+
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -1018,8 +1075,6 @@
     });
   </script>
 
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
 
